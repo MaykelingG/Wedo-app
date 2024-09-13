@@ -7,3 +7,10 @@
 -nombres
 -email
 -telefono
+
+##Emprendimiento
+-id_emprendimiento **(PK)**
+-nombre
+-descripcion
+-financiamiento
+
