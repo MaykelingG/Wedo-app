@@ -129,3 +129,32 @@ CREATE TABLE margen (
   FOREIGN KEY (id_producto) REFERENCES Producto (id_producto)
 );
 GO
+-- TIGGER
+CREATE TRIGGER validar_email
+ON usuarios
+FOR INSERT, UPDATE
+AS
+BEGIN
+    DECLARE @email VARCHAR(60)
+    SELECT @email = email FROM inserted
+    IF @email NOT LIKE '%_@__%.__%'
+    BEGIN
+        RAISERROR ('El formato del email no es válido', 16, 1)
+        ROLLBACK TRANSACTION
+    END
+END
+GO
+
+CREATE TRIGGER actualizar_stock_material
+ON material
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    DECLARE @id_producto INT, @cantidad FLOAT
+    SELECT @id_producto = id_producto, @cantidad = cantidad FROM inserted
+
+    UPDATE producto
+    SET cantidad = cantidad - @cantidad
+    WHERE id_producto = @id_producto
+END
+GO
