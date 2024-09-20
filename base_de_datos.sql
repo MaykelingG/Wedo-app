@@ -129,7 +129,7 @@ CREATE TABLE margen (
   FOREIGN KEY (id_producto) REFERENCES Producto (id_producto)
 );
 GO
--- TIGGER
+-- TRIGGER
 CREATE TRIGGER validar_email
 ON usuarios
 FOR INSERT, UPDATE
@@ -158,3 +158,4 @@ BEGIN
     WHERE id_producto = @id_producto
 END
 GO
+-- PENDIENTE CREAR TRIGGER
