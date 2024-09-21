@@ -175,4 +175,64 @@ BEGIN
     WHERE id_producto = @id_producto
 END
 GO
--- PENDIENTE CREAR TRIGGER
+
+-- Insertar datos en la tabla usuarios
+INSERT INTO usuarios (nombres, email, telefono) VALUES 
+('Juan Pérez', 'juan.perez@example.com', '123456789'),
+('María López', 'maria.lopez@example.com', '987654321');
+
+-- Insertar datos en la tabla emprendimiento
+INSERT INTO emprendimiento (nombre, descripcion, financiamiento) VALUES 
+('Tech Solutions', 'Desarrollo de software', 50000.00),
+('Eco Products', 'Productos ecológicos', 30000.00);
+
+-- Insertar datos en la tabla prestamo
+INSERT INTO prestamo (valor, interes, plazo, frecuencia) VALUES 
+(10000.00, 5.5, 12, 'Mensual'),
+(20000.00, 4.5, 24, 'Mensual');
+
+-- Insertar datos en la tabla calculo
+INSERT INTO calculo (interes, cuotas, total_cuotas, pago_cuota, id_prestamo) VALUES 
+(5.5, 12, 12, 850.00, 1),
+(4.5, 24, 24, 900.00, 2);
+
+-- Insertar datos en la tabla producto
+INSERT INTO producto (nombre, frecuencia_compra, cantidad, precio_promedio, intension_compra, id_emprendimiento) VALUES 
+('Laptop', 6, 50, 800.00, 0.8, 1),
+('Botella Reutilizable', 12, 200, 15.00, 0.9, 2);
+
+-- Insertar datos en la tabla segmentacion
+INSERT INTO segmentacion (zona, rango_edad, densidad, id_producto, id_departamento, id_municipio, id_oferta) VALUES 
+('Urbana', '18-35', 1000, 1, 1, 1, 1),
+('Rural', '36-50', 500, 2, 2, 2, 2);
+
+-- Insertar datos en la tabla potencial
+INSERT INTO potencial (potencial_clientes, potencial_monetario, consumo_percapita, id_producto) VALUES 
+(1000.00, 800000.00, 800.00, 1),
+(500.00, 7500.00, 15.00, 2);
+
+-- Insertar datos en la tabla inversion_activos
+INSERT INTO inversion_activos (nombre, costo, cantidad, utilidad, id_emprendimiento, id_clasificacion_activo) VALUES 
+('Servidor', 5000.00, 10, 5, 1, 1),
+('Máquina de reciclaje', 2000.00, 5, 3, 2, 2);
+
+-- Insertar datos en la tabla gastos_operacion
+INSERT INTO gastos_operacion (nombre, costo, cantidad, id_emprendimiento, id_clasificacion_gasto) VALUES 
+('Electricidad', 100.00, 12, 1, 1),
+('Agua', 50.00, 12, 2, 2);
+
+-- Insertar datos en la tabla inversion
+INSERT INTO inversion (total_inversion, total_depreciaciones, total_gasto, costo, inversion, capital, id_emprendimiento) VALUES 
+(100000.00, 5000.00, 2000.00, 95000.00, 50000.00, 45000.00, 1),
+(50000.00, 2000.00, 1000.00, 47000.00, 30000.00, 17000.00, 2);
+
+-- Insertar datos en la tabla material
+INSERT INTO material (nombre, medida, cantidad, coste, id_producto) VALUES 
+('Plástico', 'kg', 100.00, 200.00, 2),
+('Metal', 'kg', 50.00, 500.00, 1);
+
+-- Insertar datos en la tabla margen
+INSERT INTO margen (costo, precio, margen, id_producto) VALUES 
+(700.00, 800.00, 100.00, 1),
+(10.00, 15.00, 5.00, 2);
+
