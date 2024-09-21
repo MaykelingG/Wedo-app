@@ -130,6 +130,23 @@ CREATE TABLE margen (
 );
 GO
 -- TRIGGER
+
+  --VALIDAR EL NUMERO DE TELEFONO
+CREATE TRIGGER validar_telefono
+ON usuarios
+FOR INSERT, UPDATE
+AS
+BEGIN
+    DECLARE @telefono VARCHAR(9)
+    SELECT @telefono = telefono FROM inserted
+    IF @telefono NOT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+    BEGIN
+        RAISERROR ('El formato del teléfono no es válido', 16, 1)
+        ROLLBACK TRANSACTION
+    END
+END
+GO
+
 CREATE TRIGGER validar_email
 ON usuarios
 FOR INSERT, UPDATE
