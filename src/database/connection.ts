@@ -1,10 +1,13 @@
 import myslq from 'mysql2';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const connection = myslq.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '57810634rrr',
-    database: 'proyecto_wedo',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
 });
 
 connection.connect((err) => {
