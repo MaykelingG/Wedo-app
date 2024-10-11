@@ -1,7 +1,10 @@
 import express from 'express';
 import morgan, { StreamOptions } from 'morgan';
-import chatbot from './router/chatbot';
 import cors from 'cors';
+
+import chatbot from './router/chatbot';
+import usuarios from './router/usuarios';
+
 import './database/connection'
 
 const app: express.Application = express();
@@ -14,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev') as express.RequestHandler<StreamOptions>);
 
 app.use('/api/chatbot', chatbot);
+app.use('/api/usuarios', usuarios)
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

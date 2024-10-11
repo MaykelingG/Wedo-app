@@ -3,10 +3,12 @@ CREATE DATABASE proyecto_wedo;
 USE proyecto_wedo;
 
 CREATE TABLE usuarios(
-id_usuario INT PRIMARY KEY IDENTITY(1,1),
-nombres VARCHAR(80) NOT NULL,
-email VARCHAR(60) NOT NULL,
-telefono VARCHAR (9) NOT NULL
+  id_usuario CHAR(36) PRIMARY KEY NOT NULL DEFAULT (UUID()),
+  nombres VARCHAR(80) NOT NULL,
+  apellidos VARCHAR(80) NOT NULL,
+  email VARCHAR(60) NOT NULL,
+  telefono VARCHAR (9) NOT NULL,
+  clave VARCHAR(60) NOT NULL
 );
 
 CREATE TABLE emprendimiento(
