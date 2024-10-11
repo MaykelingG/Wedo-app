@@ -1,31 +1,18 @@
-import sql from 'mssql';
+import myslq from 'mysql2';
 
-const config = {
-  server: 'localhost',
-  database: 'proyecto_wedo',
-  options: {
-    encrypt: true,
-    trustServerCertificate: true,
-  },
-  authentication: {
-    type: 'ntl',
-    options: {
-      domain: 'localhost',
-      userName: '',
-      password: '',
+const connection = myslq.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '57810634rrr',
+    database: 'proyecto_wedo',
+});
+
+connection.connect((err) => {
+    if (err) {
+        console.log('Error connecting to database');
+        return;
     }
-  }
-}
+    console.log('Conectado a la base de datos');
+});
 
-async function connect() {
-  try {
-    await sql.connect(config);
-  } catch (error) {
-    console.error('Error connecting to the database', error);
-  }
-}
-
-export default {
-  sql,
-  connect,
-};
+export default connection;
