@@ -42,10 +42,14 @@ import Layout from '../layouts/Layout.astro';
 		if($input){
 			$input.value = '';
 		}
+
+		const credenciales = btoa("xnpxvlzo:5f5e5b3f4-659a-44ed-9e44-2b1f99ae6517") 
+
 		const respose = await fetch('http://localhost:3000/api/chatbot/preguntar', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Authorization': `Basic ${credenciales}`
 			},
 			body: JSON.stringify({ pregunta })
 		});
