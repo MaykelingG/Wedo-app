@@ -56,7 +56,6 @@ import Layout from '../layouts/Layout.astro';
 
 		const data = await respose.json();
 
-		console.log(data);
 		const $message = document.createElement('div');
 		$message.classList.add('bg-gray-700', 'text-white', 'py-2', 'px-3', 'rounded-md', 'mr-auto', 'w-[70%]');
 		$message.textContent = data.content;
