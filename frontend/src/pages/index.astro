@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<section class="flex items-center justify-center h-screen">
+		<form id="form" class="max-w-xl w-full h-[90%] ">
+			<div id="messages" class="flex h-[90%] flex-col gap-4 overflow-x-hidden overflow-y-auto my-4 px-2"></div>
+			<div class="flex w-full justify-between gap-3">
+				<input class="w-full rounded-md px-4 outline-none" type="text" placeholder="Escribe tu pregunta">
+				<button class="bg-blue-700 text-white py-2 px-3 rounded-md">Enviar</button>
+			</div> 
+		</form>
+	</section>
+</Layout>
+
+<script>
+	const $form = document.getElementById('form') as HTMLFormElement;
+	const $messages = document.getElementById('messages');
+	const $input = $form.querySelector('input');
+
+	document.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		
+		if(!$form || !$input || !$messages) return;
+
+		const $message = document.createElement('div');
+		$message.classList.add('bg-blue-700', 'text-white', 'py-2', 'px-3', 'rounded-md', 'ml-auto');
+		$message.textContent = $input.value;
+
+		$messages.appendChild($message);
+		
+		$messages.scrollTo({
+			top: $messages.scrollHeight,
+			behavior: 'smooth'
+		});
+
+		await crearRespuesta($input.value);
+	});
+	
+	async function crearRespuesta(pregunta: string) {
+		if($input){
+			$input.value = '';
+		}
+		const respose = await fetch('http://localhost:3000/api/chatbot/preguntar', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ pregunta })
+		});
+
+		const data = await respose.json();
+
+		console.log(data);
+		const $message = document.createElement('div');
+		$message.classList.add('bg-gray-700', 'text-white', 'py-2', 'px-3', 'rounded-md', 'mr-auto', 'w-[70%]');
+		$message.textContent = data.content;
+
+		if(!$messages) return;
+		$messages.appendChild($message);
+		// Llevar el scroll al final con animacion smooth
+
+		$messages.scrollTo({
+			top: $messages.scrollHeight,
+			behavior: 'smooth'
+		});
+	}
+</script>
