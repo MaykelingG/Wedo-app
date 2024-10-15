@@ -1,4 +1,4 @@
-import usuariosModel from "@/model/usuarios";
+import usuariosModel from "@/models/usuarios";
 import { UsuarioType } from "@/types/usuarios";
 import { Request, Response } from "express";
 

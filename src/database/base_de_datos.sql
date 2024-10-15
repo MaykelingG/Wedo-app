@@ -25,7 +25,9 @@ CREATE TABLE prestamo(
   valor FLOAT NOT NULL,
   interes FLOAT NOT NULL,
   plazo INT NOT NULL,
-  frecuencia VARCHAR(10) NOT NULL
+  frecuencia VARCHAR(10) NOT NULL,
+  id_emprendimiento INT,
+  FOREIGN KEY (id_emprendimiento) REFERENCES emprendimiento (id_emprendimiento)
 );
 
 CREATE TABLE producto (
@@ -34,7 +36,7 @@ CREATE TABLE producto (
   frecuencia_compra INT,
   cantidad INT,
   precio_promedio FLOAT,
-  intension_compra FLOAT,
+  intencion_compra FLOAT,
   id_emprendimiento INT,
   FOREIGN KEY (id_emprendimiento) REFERENCES emprendimiento (id_emprendimiento)
 );
@@ -54,7 +56,7 @@ CREATE TABLE potencial (
 );
 
 CREATE TABLE inversion_activos (
-  id_inversiones INT PRIMARY KEY AUTO_INCREMENT,
+  id_inversion INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(40),
   costo FLOAT,
   cantidad INT,

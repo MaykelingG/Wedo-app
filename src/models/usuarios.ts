@@ -69,6 +69,4 @@ class UsuariosModel {
   }
 }
 
-const usuariosModel = new UsuariosModel();
-
-export default usuariosModel;
+export default new UsuariosModel();
