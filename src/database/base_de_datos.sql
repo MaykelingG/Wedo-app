@@ -11,7 +11,7 @@ CREATE TABLE usuarios(
   clave VARCHAR(60) NOT NULL
 );
 
-CREATE TABLE emprendimiento(
+CREATE TABLE emprendimientos(
   id_emprendimiento INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(80) NOT NULL,
   descripcion VARCHAR(80) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE emprendimiento(
   FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
 );
 
-CREATE TABLE prestamo(
+CREATE TABLE prestamos(
   id_prestamo INT PRIMARY KEY AUTO_INCREMENT,
   valor FLOAT NOT NULL,
   interes FLOAT NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE prestamo(
   FOREIGN KEY (id_emprendimiento) REFERENCES emprendimiento (id_emprendimiento)
 );
 
-CREATE TABLE producto (
+CREATE TABLE productos (
   id_producto INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(40),
   frecuencia_compra INT,
@@ -41,7 +41,7 @@ CREATE TABLE producto (
   FOREIGN KEY (id_emprendimiento) REFERENCES emprendimiento (id_emprendimiento)
 );
 
-CREATE TABLE segmentacion (
+CREATE TABLE    0 (
   id_segmentacion INT PRIMARY KEY AUTO_INCREMENT,
   texto TEXT,
   id_producto INT,
