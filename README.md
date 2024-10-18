@@ -64,5 +64,7 @@ Cada uno de estos endpoind corresponde a una `url` específica y un método http
 
 Las respuesta que de el servidor luego de la petición será en archivos `json`.
 
+## Modelo relacional
+![modelo-relacional](./public/Base_de_datos_Wedo.png)
 
 Proyecto Hackathon 2024 - Web app bussines
