@@ -42,8 +42,8 @@ Estructura del archivo **.env**:
 ```
 OPENIA_KEY = clave-para-interactuar-con-servicios-externos-IA
 DB_HOST = acceso-a-base-de-datos
-DB_USER =  acceso-a-base-de-datos
-DB_PASSWORD =  acceso-a-base-de-datos
+DB_USER =  usuario-de-acceso-a-base-de-datos
+DB_PASSWORD = contraseña-de-acceso-a-base-de-datos
 DB_DATABASE =  acceso-a-base-de-datos
 USER_AUTH = usuario-de-autenticación
 PASSWORD_AUTH = contraseña-de-autenticación
