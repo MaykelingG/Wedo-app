@@ -40,6 +40,13 @@ El proyecto cuenta con un archivo **.env**, este guarda las variables de entorno
 
 Estructura del archivo **.env**:
 ```
+OPENIA_KEY = clave-para-interactuar-con-servicios-externos-IA
+DB_HOST = acceso-a-base-de-datos
+DB_USER =  acceso-a-base-de-datos
+DB_PASSWORD =  acceso-a-base-de-datos
+DB_DATABASE =  acceso-a-base-de-datos
+USER_AUTH = usuario-de-autenticación
+PASSWORD_AUTH = contraseña-de-autenticación
 ```
 La entrada del servidor `(app.ts)`, crea el app que viene de express, luego crea el puerto que se usará, si no viene el puerto en las variables de entorno lo iniciará en el puerto 3000 por defecto.
 
