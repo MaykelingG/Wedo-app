@@ -73,4 +73,5 @@ Las respuesta que de el servidor luego de la petición será en archivos `json`.
 ## Normalización
 [Normalizacón](https://inatecni-my.sharepoint.com/:x:/g/personal/maykeling_gonzalez3_tecnacional_edu_ni/EXgeS8vs6QtLpwwfxupUgw0BjoWEYoXOiCzfuLqsn9UsAQ?e=7gSLbR)
 
+
 Proyecto Hackathon 2024 - Web app bussines
