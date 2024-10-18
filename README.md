@@ -51,7 +51,7 @@ PASSWORD_AUTH = contraseña-de-autenticación
 La entrada del servidor `(app.ts)`, crea el app que viene de express, luego crea el puerto que se usará, si no viene el puerto en las variables de entorno lo iniciará en el puerto 3000 por defecto.
 
 - Usa el middleware de `express` para indicarle que se usará formato `json`:
-- Utiliza `morgan` para que en modo desarrollo podamos ver en consola las peticiones que se le hacen a nuestro servidor.
+- Utiliza `MySQL` para que en modo desarrollo podamos ver en consola las peticiones que se le hacen a nuestro servidor.
 - Cuando se hace una petición, esta pasa por dos middleware, uno de ellos busca la ruta a la que se le hizo la petición, si no está en el router muestra un error `404` que indica que la url no existe, de lo contrario se activa el segundo middleware que verifica que dentro de los headers de la petición venga las claves de autentificación, si no vienen o son incorrectas, muestra un error `401` que indica que no está autorizado.
 
 ### Organización de carpetas
@@ -59,7 +59,7 @@ La entrada del servidor `(app.ts)`, crea el app que viene de express, luego crea
 - **node_modules/**: Contiene las dependencias del proyecto instaladas a través de pnpm.
 - **src/**:
   - **controllers/**: Contiene los controladores que manejan la lógica de negocio y las interacciones con la base de datos.
-  - **database/**: Contiene la conexión a la base de datos en Mongo Atlas, verifica la IP para agregarla a las IP permitidas de Mongo.
+  - **database/**: Contiene la conexión a la base de datos en MySQL
   - **lib/**: Contiene scripts del proyecto que automatizan los procesos que realiza el servidor cuando hace la autentificación, peticiones, errores, entre otras.
   - **models/**: Contiene todos los modelos de la arquitectura de la base de datos
   - **router/**: Contiene las definiciones de las rutas de la API.
