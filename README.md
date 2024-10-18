@@ -67,4 +67,10 @@ Las respuesta que de el servidor luego de la petición será en archivos `json`.
 ## Modelo relacional
 ![modelo-relacional](./resources/Base_de_datos_Wedo.png)
 
+## Diccionario de datos
+[Diccionario de datos](https://inatecni-my.sharepoint.com/:x:/g/personal/maykeling_gonzalez3_tecnacional_edu_ni/ESWPc8hQdEFKjxuS8i9Kyb8B0BpvRAjVFz7RxRttAFCiaw?e=OeflqZ)
+
+## Normalización
+[Normalizacón](https://inatecni-my.sharepoint.com/:x:/g/personal/maykeling_gonzalez3_tecnacional_edu_ni/EXgeS8vs6QtLpwwfxupUgw0BjoWEYoXOiCzfuLqsn9UsAQ?e=7gSLbR)
+
 Proyecto Hackathon 2024 - Web app bussines
